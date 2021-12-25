@@ -1,3 +1,4 @@
+import path from "path";
 import express from "express";
 import API from "./api";
 
@@ -6,8 +7,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-
-
+app.use("/", express.static(path.resolve(__dirname, "./public")));
 
 app.use("/api", API);
 
